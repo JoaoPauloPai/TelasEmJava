@@ -33,7 +33,7 @@ public class TimeTelaThread extends JDialog{
 				mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss").
 						format(Calendar.getInstance().getTime()));
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(1000);
 				}catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -51,7 +51,7 @@ public class TimeTelaThread extends JDialog{
 				mostraTempo2.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").
 						format(Calendar.getInstance().getTime()));
 				try {
-					Thread.sleep(100);
+					Thread.sleep(2000);
 				}catch (Exception e) {
 					// TODO: handle exception
 				}

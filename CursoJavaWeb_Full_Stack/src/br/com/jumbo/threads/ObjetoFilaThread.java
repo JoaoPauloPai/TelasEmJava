@@ -4,9 +4,18 @@ import java.util.Objects;
 
 public class ObjetoFilaThread {
 	
+	private int cod;
 	private String nome;
 	private String email;
 	
+	
+	
+	public int getCod() {
+		return cod;
+	}
+	public void setCod(int cod) {
+		this.cod = cod;
+	}
 	public String getNome() {
 		return nome;
 	}

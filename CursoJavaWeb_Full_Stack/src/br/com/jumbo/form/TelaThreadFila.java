@@ -21,16 +21,16 @@ import br.com.jumbo.threads.ObjetoFilaThread;
 
 public class TelaThreadFila extends JDialog {
 	
-
+    
 	private JPanel jPnael = new JPanel(new GridBagLayout());//Painel de componentes
 	private JButton jButton = new JButton("add Lista");
 	private JButton jButton2 = new JButton("Stop");
 	
 	private JLabel descricao1 = new JLabel("Nome");
-	private JTextField mostraTempo = new JTextField();
+	private JTextField mostraNome = new JTextField();
 	
 	private JLabel descricao2 = new JLabel("Email");
-	private JTextField mostraTempo2 = new JTextField();
+	private JTextField mostraEmail = new JTextField();
 	
 	private ImplementacaoFilaThread fila = new ImplementacaoFilaThread();
 	
@@ -51,17 +51,17 @@ public class TelaThreadFila extends JDialog {
 	descricao1.setPreferredSize(new Dimension(200, 25));
 	jPnael.add(descricao1,gridBagConstraints);
 
-	mostraTempo.setPreferredSize(new Dimension(200, 25));
+	mostraNome.setPreferredSize(new Dimension(200, 25));
 	gridBagConstraints.gridy ++;
-	jPnael.add(mostraTempo, gridBagConstraints);
+	jPnael.add(mostraNome, gridBagConstraints);
 	
 	descricao2.setPreferredSize(new Dimension(200, 25));
 	gridBagConstraints.gridy ++;
 	jPnael.add(descricao2,gridBagConstraints);
 	
-	mostraTempo2.setPreferredSize(new Dimension(200, 25));
+	mostraEmail.setPreferredSize(new Dimension(200, 25));
 	gridBagConstraints.gridy ++;
-	jPnael.add(mostraTempo2, gridBagConstraints);
+	jPnael.add(mostraEmail, gridBagConstraints);
 	gridBagConstraints.gridwidth = 1;
 	jButton.setPreferredSize(new Dimension(92,25));
 	gridBagConstraints.gridy ++;
@@ -72,23 +72,45 @@ public class TelaThreadFila extends JDialog {
 	jPnael.add(jButton2,gridBagConstraints );
 	
 	
-	jButton.addActionListener(new ActionListener() {
+	
+	jButton.addActionListener(new ActionListener() {//Executar o botão 
+	
 		@Override
 		public void actionPerformed(ActionEvent e) {
+
+			if(fila == null) {
+				fila = new ImplementacaoFilaThread();
+				fila.start();
+				
+			}
+				
+			
+			for(int qtd = 0; qtd < 100; qtd++) {
 			
 			ObjetoFilaThread objetoFilaThread = new ObjetoFilaThread();
+			objetoFilaThread.setCod(qtd);
+			objetoFilaThread.setNome(mostraNome.getText());
+		    objetoFilaThread.setEmail(mostraEmail.getText());
+		   
 		
+		  fila.add(objetoFilaThread);
 		
-				}
+		  
+		}
+		}
+		
 	});
-	
 	
 	jButton2.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			fila = null;
 		}
 	});
+	
+	
+
 	
 	
     fila.start();
