@@ -5,8 +5,8 @@ import java.lang.*;
 
 
 public class ThredMain {
-	public static void main(String[] args) throws Exception {
-		
+	//public static void main(String[] args) throws Exception {
+		/*
 		               Thread threadEmail   =  new Thread(thread1);
 		                threadEmail.start();
 		                
@@ -22,7 +22,7 @@ public class ThredMain {
 		//Código do usuário no fluxo de trabalho
 		System.out.println("Codigo Rodando");
 		
-		}
+		//}
 	
 	    private static Runnable thread2 = new Runnable() {
 			
@@ -68,7 +68,7 @@ public class ThredMain {
 				
 			}
 		};
-		
+		*/
 	}
 
 

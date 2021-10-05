@@ -23,6 +23,7 @@ public class TelaThreadFila extends JDialog {
 	
     
 	private JPanel jPnael = new JPanel(new GridBagLayout());//Painel de componentes
+	
 	private JButton jButton = new JButton("add Lista");
 	private JButton jButton2 = new JButton("Stop");
 	

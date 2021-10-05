@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import br.com.jumbo.date.DataForm;
 import br.com.jumbo.threads.ObjetoFilaThread;
 
 public class TelaPrincipal extends JDialog{
@@ -23,8 +24,11 @@ public class TelaPrincipal extends JDialog{
 	private JLabel descricao1 = new JLabel("Trhead em Tempo Real");
 	private JButton jButton1 = new JButton("THREAD");
 	
-	private JLabel descricao2 = new JLabel("Chamar Tela FilaTrhead");
+	private JLabel descricao2 = new JLabel("Tela Fila Trhead");
 	private JButton jButton2 = new JButton("THREAD");
+	
+	private JLabel descricao3 = new JLabel("    Datas");
+	private JButton jButton3 = new JButton("Data");
 	
 	public TelaPrincipal() {
 		setTitle("TELA PRINCIPAL DO SISTEMA");
@@ -59,6 +63,16 @@ public class TelaPrincipal extends JDialog{
 		gridBagConstraints.gridwidth = 1;
 		jPnael.add(jButton2,gridBagConstraints );
 		
+		gridBagConstraints . gridy ++ ;
+		gridBagConstraints.gridwidth = 2;
+		descricao3.setPreferredSize(new Dimension(200, 25));
+	    jPnael.add(descricao3,gridBagConstraints);
+	    jButton3.setPreferredSize(new Dimension(92,25));
+		gridBagConstraints.gridy ++;
+		gridBagConstraints.gridwidth = 1;
+		jPnael.add(jButton3,gridBagConstraints );
+		
+		
 		
 		jButton1.addActionListener(new ActionListener() {
 			@Override
@@ -79,6 +93,16 @@ public class TelaPrincipal extends JDialog{
 			
 			}
 		});
+	
+	jButton3.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			DataForm dataForm = new DataForm();
+		
+		}
+	});
 		
 
 		add(jPnael, BorderLayout.WEST);
