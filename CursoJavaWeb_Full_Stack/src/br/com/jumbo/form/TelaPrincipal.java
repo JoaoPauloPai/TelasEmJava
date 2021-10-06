@@ -30,6 +30,9 @@ public class TelaPrincipal extends JDialog{
 	private JLabel descricao3 = new JLabel("    Datas");
 	private JButton jButton3 = new JButton("Data");
 	
+	private JLabel descricao4 = new JLabel("    Arqquivos");
+	private JButton jButton4 = new JButton("ARQUIVOS");
+	
 	public TelaPrincipal() {
 		setTitle("TELA PRINCIPAL DO SISTEMA");
 		setSize(new Dimension(300, 500));
@@ -72,6 +75,14 @@ public class TelaPrincipal extends JDialog{
 		gridBagConstraints.gridwidth = 1;
 		jPnael.add(jButton3,gridBagConstraints );
 		
+		gridBagConstraints . gridy ++ ;
+		gridBagConstraints.gridwidth = 2;
+		descricao4.setPreferredSize(new Dimension(200, 25));
+	    jPnael.add(descricao4,gridBagConstraints);
+	    jButton4.setPreferredSize(new Dimension(92,25));
+		gridBagConstraints.gridy ++;
+		gridBagConstraints.gridwidth = 1;
+		jPnael.add(jButton4,gridBagConstraints );
 		
 		
 		jButton1.addActionListener(new ActionListener() {
@@ -100,6 +111,16 @@ public class TelaPrincipal extends JDialog{
 		public void actionPerformed(ActionEvent e) {
 			
 			DataForm dataForm = new DataForm();
+		
+		}
+	});
+	
+	jButton4.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		
+			ArquivoForm arquivoForm = new ArquivoForm();
 		
 		}
 	});
